@@ -1,0 +1,249 @@
+/* .............................Navbar............................. */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+a{
+    cursor: pointer;
+}
+
+button{
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    background-color: #E6851A;
+    height: 100vh;
+    width: 4vw;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+
+.nav-item img {
+    height: 2rem;
+    width: 2rem;
+}
+
+#section1 {
+    position: relative;
+    margin-left: 4rem;
+    height: 100vh;
+    /* width: 90vw; */
+}
+
+#logoimg{
+    height:5em;
+    width: 5rem;
+    margin:2rem 0 40rem 4rem;
+}
+
+#section1img {
+    position: absolute;
+    height: 60vh;
+    width: 50vw;
+    top: 35vh;
+    right: 0vw;
+    bottom: 0vh;
+}
+
+#section1 h1 {
+    position: absolute;
+    color: #555BA5;
+    font-weight: 700;
+    font-size: 6rem;
+    top: 10vh;
+    left: 4vw;
+}
+
+#section1 h5 {
+    position: absolute;
+    font-size: 2rem;
+    font-weight: 300;
+    top: 28vh;
+    left: 4vw;
+}
+
+#section1 h5 span {
+    color: #E6851A;
+}
+
+#section1 button {
+    position: absolute;
+    background-color: #555BA5;
+    color: white;
+    border-radius: 10px;
+    height: 3rem;
+    width: 9rem;
+    margin: 1rem 0;
+    font-size: larger;
+    top: 35vh;
+    left: 4vw;
+    border: none;
+}
+
+#section1 button:hover {
+    cursor: pointer;
+    background-color: #E6851A;
+}
+
+#section2 {
+    position: relative;
+    margin-top: 10vh;
+    height: 100vh;
+    width: 90vw;
+    margin-left: 4rem;
+}
+
+#section2 h1,
+#section3 h1,
+#section4 h1 {
+    color: #E6851A;
+    text-align: center;
+    font-size: 3rem;
+    margin-left: 7vw;
+}
+
+#section2 div {
+    position: absolute;
+    background-color: #555BA5;
+    height: 20vh;
+    width: 20vw;
+    padding: 2rem;
+    color: white;
+    font-size: 1rem;
+}
+
+#topleft {
+    position: absolute;
+    border-radius: 0 0 20% 0;
+    top: 20vh;
+    left: 20vw;
+}
+
+#topright {
+    position: absolute;
+    border-radius: 0 0 0 20%;
+    top: 20vh;
+    left: 50vw;
+}
+
+#bottomleft {
+    position: absolute;
+    border-radius: 0 20% 0 0;
+    top: 60vh;
+    left: 20vw;
+}
+
+#bottomright {
+    position: absolute;
+    border-radius: 20% 0 0 0;
+    top: 60vh;
+    left: 50vw;
+}
+
+#section2 img {
+    position: absolute;
+    height: 20vh;
+    width: 12vw;
+    top: 45vh;
+    left: 41vw;
+}
+
+#section3 {
+    /* position: relative; */
+    margin-top: 10vh;
+    height: 90vh;
+    width: 90vw;
+    margin-left: 4rem;
+}
+
+#section3 #usertypes {
+    display: flex;
+    flex-direction: row;
+    gap: 10vw;
+    margin-top: 10vh;
+    margin-left: 20vw;
+}
+
+#usertypes .user {
+    border: 2px solid #555BA5;
+    border-radius: 20px;
+
+}
+
+.userimg {
+    height: 33vh;
+    width: 23vw;
+    border-radius: 20px;
+}
+
+.userinfo {
+    height: 25vh;
+    background-color: #555BA5;
+    border-radius: 0 0 14px 14px;
+}
+
+#section4 {
+    height: 70vh;
+    width: 90vw;
+    margin-left: 4rem;
+    margin-top: 5vh;
+}
+
+#section4 #labs {
+    display: flex;
+    flex-direction: row;
+    gap: 8vh;
+    justify-content: center;
+    margin-top: 13vh;
+    margin-left: 5vw;
+}
+
+.labpic {
+    height: 25vh;
+    width: 13vw;
+    /* border-radius: 50%; */
+}
+
+#link {
+    color: #E6851A;
+    display: flex;
+    margin: 2rem 0;
+    justify-content: flex-end;
+    font-weight: 700;
+    font-size: larger;
+
+}
+
+#link:hover {
+    cursor: pointer;
+}
+
+#link span img {
+    height: 1rem;
+    width: 1rem;
+}
+
+footer {
+    border-top: 0.2rem solid #555BA5;
+    background-color: #555BA5;
+}
+
+footer p {
+    text-align: center;
+    /* color:#555BA5; */
+    color: white;
+    font-weight: 600;
+    padding: 0.3rem;
+}

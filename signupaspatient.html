@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCube</title>
+    <link rel="stylesheet" href="signupaspatient.css">
+    <script src="firebase/config.js" type="module"></script>
+    <script src="firebase/signupaspatient.js" type="module"></script>
+</head>
+<body>
+    <nav>
+        <div id="logo"></div>
+        <a href="index.html" class="nav-item"><img src="assets/home-icon-silhouette 1.png"></a>
+        <a href="" class="nav-item"><img src="assets/report 1.png"></a>
+        <a href="" class="nav-item"><img src="assets/microscope (1) 1.png"></a>
+        <a href="chooselogin.html" class="nav-item"><img src="assets/add-user 1.png"></a>
+    </nav>
+    <div id="signup-wrapper">
+        <img src="assets/signup1.png">
+        <form>
+            <h1>SignUp</h1>
+            <div class="form-opt">
+                <label for="name">Enter name*</label>
+                <input type="text" id="name"  required>
+            </div>
+            <div class="form-opt">
+                <label for="phoneno">Enter phone no*</label>
+                <input type="phoneno" id="phoneno"  required>
+            </div >
+            <div class="form-opt slectgen">
+                <label for="gender">Gender*</label>
+                <select id="gender" name="gender"  required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-opt">
+                <label for="email">Enter email*</label>
+                <input type="email" id="email"  required>
+            </div>
+            <div class="form-opt">
+                <label for="password">Enter password*</label>
+                <input type="password" id="password"  required>
+            </div>
+            <div class="form-opt">
+                <label for="cnfrmpassword">Confirm password*</label>
+                <input type="password" id="cnfrmpassword"  required>
+            </div>
+            <button id="signup-btn">Create account</button>
+            <a href="loginaspatient.html">Already have a account? Login here</a>
+        </form>
+        <img src="assets/signup2.png">
+    </div>
+</body>
+</html>
