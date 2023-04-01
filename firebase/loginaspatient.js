@@ -12,6 +12,8 @@ function LoginUser() {
             // Signed in 
             var uid = userCredential.user.uid;
             alert('user logged in');
+            setTimeout(()=>{window.location.href="index.html";},400);
+
             // ...
         })
         .catch((error) => {
@@ -28,7 +30,6 @@ onAuthStateChanged(auth, async(user) => {
     if (user) {
         const uid = user.uid;
         console.log("current user: ", uid);
-        // setTimeout(()=>{window.location.href="index.html";},400);
     } 
     else {
     }

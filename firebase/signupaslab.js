@@ -4,6 +4,7 @@ import { app, database, auth,createUserWithEmailAndPassword, collection, addDoc 
 const name=document.getElementById("name");
 const phoneno=document.getElementById("phoneno");
 const address=document.getElementById("address");
+const website=document.getElementById("website");
 const email = document.getElementById("email");
 const pswrd = document.getElementById("password");
 const cnfrmpswrd = document.getElementById("cnfrmpassword");
@@ -39,11 +40,17 @@ function RegisterLab() {
                 name:name.value,
                 phoneno:phoneno.value,
                 address:address.value,
-                email: email.value
+                website:website.value,
+                email: email.value,
+                uid:user.uid,
+                typeof:"lab"
             }).then((docRef) => {
                 console.log("Document written with ID: ", docRef.id);
                 alert("user created");
-                window.location.href='';
+                setTimeout(()=>{                
+                    window.location.href='index.html';
+                },500)
+
             });
 
         })

@@ -35,15 +35,19 @@ function RegisterUser() {
             const user = userCredential.user;
             
             addDoc(collection(database, "users"), {
-                uid: name.value+email.value,
+                pid: name.value+email.value,
                 name:name.value,
                 phoneno:phoneno.value,
                 gender:gender.value,
-                email: email.value
+                email: email.value,
+                uid:user.uid,
+                typeof:"patient"
             }).then((docRef) => {
                 console.log("Document written with ID: ", docRef.id);
                 alert("user created");
-                window.location.href='';
+                setTimeout(()=>{                
+                    window.location.href='index.html';
+                },500)
             });
 
         })

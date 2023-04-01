@@ -7,15 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Medicube</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+
+    <script src="firebase/reportpage.js" type="module"></script>
+    <script src="firebase/loginlogout.js" type="module"></script>
+
 </head>
 
 <body>
     <nav>
-        <!-- <div id="logo"></div> -->
         <a href="index.html" class="nav-item"><img src="assets/home-icon-silhouette 1.png"></a>
-        <a href="" class="nav-item"><img src="assets/report 1.png"></a>
-        <a href="" class="nav-item"><img src="assets/microscope (1) 1.png"></a>
-        <a href="chooselogin.html" class="nav-item"><img src="assets/add-user 1.png"></a>
+        <a href="" id="checkusertype" class="nav-item"><img src="assets/report 1.png"></a>
+        <a href="associatedlabs.html" class="nav-item"><img src="assets/microscope (1) 1.png"></a>
+        <a id="Login_button" class="nav-item"><img src="assets/add-user 1.png"></a>
+        <a id="out_Btn" class="nav-item"><img src="assets/logout.png"></a>
     </nav>
     <div id="section1">
         <!-- <img id="logoimg" src="assets/logo.png"> -->

@@ -11,6 +11,7 @@ function LoginLab() {
             // Signed in 
             var uid = userCredential.user.uid;
             alert('Lab logged in');
+            setTimeout(()=>{window.location.href="index.html";},400);
             // ...
         })
         .catch((error) => {
@@ -26,7 +27,6 @@ onAuthStateChanged(auth, async(user) => {
     if (user) {
         const uid = user.uid;
         console.log("current lab: ", uid);
-        // setTimeout(()=>{window.location.href="index.html";},400);
     } 
     else {
     }
@@ -35,4 +35,6 @@ onAuthStateChanged(auth, async(user) => {
 //..................................................ASSIGN THE EVENTS..............................//   
 login.addEventListener("click", (e)=>{
     e.preventDefault();
-    LoginLab()});
+    LoginLab()
+
+});
