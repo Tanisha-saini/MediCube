@@ -1,7 +1,7 @@
 
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-  import { getFirestore, collection, doc, addDoc, getDocs, query, where, updateDoc, onSnapshot,orderBy } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
+  import { getFirestore, collection, doc, addDoc, getDocs, query, where, updateDoc, onSnapshot,orderBy,arrayUnion } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -47,12 +47,13 @@ export {
     updateDoc,
     onSnapshot,
     orderBy,
+    arrayUnion,
 
     getStorage,
     ref,
     uploadString,
     getDownloadURL,
     deleteObject,
-    app,
+    app
 };
 

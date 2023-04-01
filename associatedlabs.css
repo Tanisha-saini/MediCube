@@ -30,10 +30,9 @@ nav {
 
 h1{
     text-align: center;
-    /* margin-top: 1rem; */
+    padding-top: 1rem;
     color:#555BA5;
     font-size: 3rem;
-    padding: 2rem 0;
 }
 
 #labs-wrap {
@@ -55,9 +54,13 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap:5px;
 }
 
-.labcov img{
+.logo{
     height:5rem;
     width:5rem;
+}
+.h2{
+    color:#555BA5;
 }
