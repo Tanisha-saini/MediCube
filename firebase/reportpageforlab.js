@@ -18,6 +18,7 @@ import {
 
 const user = auth.currentUser;
 var pname, pemail, typeofreport, file, timenow, noofreports;
+var urlrep, labname;
 
 const plus = document.querySelector("#newreport img");
 const inputElement = document.querySelector("#inputElement");
@@ -102,6 +103,7 @@ upload.addEventListener("click", () => {
     await getDocs(q).then((querySnapshot) => {
       querySnapshot.forEach(async (docdata) => {
         const docRef = await doc(database, "labs", docdata.id);
+        labname = docdata.data().name;
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = async (event) => {
@@ -116,6 +118,8 @@ upload.addEventListener("click", () => {
             const uploadTask = uploadString(ReportRef, imageData, "data_url")
               .then(async () => {
                 getDownloadURL(ReportRef).then(async (url) => {
+                  urlrep = url;
+                  console.log(urlrep);
                   await updateDoc(userreportDocRef, {
                     reports: arrayUnion({
                       pname,
@@ -135,6 +139,34 @@ upload.addEventListener("click", () => {
       });
     });
 
+    setTimeout(() => {
+      const q1 = query(
+        collection(database, "users"),
+        where("pid", "==", pname + pemail)
+      );
+      getDocs(q1).then((snap) => {
+        snap.forEach(async (docdata) => {
+          console.log(urlrep);
+          const docRef = doc(database, "users", docdata.id);
+          await updateDoc(docRef, {
+            [typeofreport]: arrayUnion({
+              labname,
+              urlrep,
+              timenow
+            })
+          })
+            .then(docRef => {
+              console.log("t");
+            })
+            .catch(error => {
+              console.log(error);
+            })
+
+        })
+      })
+    }, 15000);
+
+
     // addreporttodb(type,file);
     inputelement2.style.display = "none";
     plus.src = "assets/plus1.png";
@@ -143,6 +175,9 @@ upload.addEventListener("click", () => {
     }
     addReport();
   });
+
+
+
 });
 
 const reportElements = document.getElementById("reportElements");
@@ -168,8 +203,8 @@ function addReport() {
   p4.style.fontSize = "10px";
   p4.innerText = "Uploaded at : " + timenow;
   const p5 = document.createElement("p");
-  p5.innerText = urlreport;
-  p5.style.display = "block";
+  p5.innerText = urlrep;
+  p5.style.display = "none";
   div2.appendChild(p1);
   div2.appendChild(p2);
   div2.appendChild(p3);
