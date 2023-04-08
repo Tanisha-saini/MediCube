@@ -79,5 +79,5 @@ function displayreport(lab, time, url) {
         window.open(url, "_blank");
     });
     // img2.addEventListener("click",()=>{});
-    div1.style.cursor = "pointer";
+    img1.style.cursor = "pointer";
 }

@@ -25,7 +25,6 @@ checkusertype.addEventListener("click", (e) => {
       getDocs(q).then((querySnapshot) => {
         if (querySnapshot.empty) {
           console.log("patient");
-          
           window.location.href = "../reportpageforpatient.html";
         } else {
           console.log("lab");
