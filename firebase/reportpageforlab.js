@@ -224,6 +224,7 @@ function addReport() {
           noofreports = docdata.data().reports.length;
           // console.log(docdata.data().reports[noofreports-1].url);
           let cuurl = docdata.data().reports[noofreports - 1].url;
+          urll=cuurl;
           window.open(cuurl, "_blank");
         });
       });
