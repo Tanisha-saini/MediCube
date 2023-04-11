@@ -14,6 +14,7 @@ import {
   ref,
   uploadString,
   arrayUnion,
+  arrayRemove,
 } from "./config.js";
 
 const user = auth.currentUser;
@@ -164,10 +165,7 @@ upload.addEventListener("click", () => {
 
         })
       })
-    }, 15000);
-
-
-    // addreporttodb(type,file);
+    }, 8000);
     inputelement2.style.display = "none";
     plus.src = "assets/plus1.png";
     for (let i = 0; i < element2.length; i++) {
@@ -175,9 +173,6 @@ upload.addEventListener("click", () => {
     }
     addReport();
   });
-
-
-
 });
 
 const reportElements = document.getElementById("reportElements");
@@ -187,14 +182,13 @@ function addReport() {
   div1.classList.add("reportElement");
   reportElements.prepend(div1);
   const div2 = document.createElement("div");
-  div2.style.flexGrow = "3";
+  div2.style.flexGrow = "2";
   const p1 = document.createElement("p");
   p1.classList.add("Pname");
   p1.innerText = "Patient name : " + pname;
   const p2 = document.createElement("p");
   p2.classList.add("Pemail");
   p2.innerText = "Patient email : " + pemail;
-  p2.style.fontSize = "15px";
   const p3 = document.createElement("p");
   p3.classList.add("type");
   p3.innerText = "Type of test : " + typeofreport;
@@ -212,18 +206,14 @@ function addReport() {
   div2.appendChild(p5);
   const div3 = document.createElement("div");
   const img1 = document.createElement("img");
-  img1.src = "assets/pencil 1.png";
-  img1.style.width = "30px";
-  img1.style.height = "30px";
+  img1.src = "assets/eye.png";
   const img2 = document.createElement("img");
   img2.src = "assets/delete 2.png";
-  img2.style.width = "30px";
-  img2.style.height = "30px";
   div3.appendChild(img1);
   div3.appendChild(img2);
   div1.appendChild(div2);
   div1.appendChild(div3);
-  div1.addEventListener("click", async () => {
+  img1.addEventListener("click", async () => {
     onAuthStateChanged(auth, async (user) => {
       const q = await query(
         collection(database, "labs"),
@@ -235,12 +225,47 @@ function addReport() {
           // console.log(docdata.data().reports[noofreports-1].url);
           let cuurl = docdata.data().reports[noofreports - 1].url;
           window.open(cuurl, "_blank");
-          addReport();
         });
       });
     });
   });
-  div1.style.cursor = "pointer";
+  img1.style.cursor = "pointer";
+  img2.addEventListener("click",(e)=>{
+    const parentEle=e.target.parentElement.parentElement;
+    onAuthStateChanged(auth,(user) => {
+      const q1 = query(
+        collection(database, "labs"),
+        where("uid", "==",user.uid)
+      );
+      getDocs(q1).then((querySnapshot) => {
+        querySnapshot.forEach( (docdata1) => {
+          const q = query(
+            collection(database, "users"),
+            where("pid", "==",pname+pemail)
+          );
+          getDocs(q).then((querySnapshot) => {
+            querySnapshot.forEach( (docdata) => {
+              const docRefreport = doc(database, "users",docdata.id);
+              console.log(docdata.id);
+              const nlab=docdata1.data().name;
+              updateDoc(docRefreport, {
+                [typeofreport]: arrayRemove({labname:nlab,timenow:timenow,urlrep:urlrep})
+              }).then(()=>{
+                console.log("updated");
+              })
+            });
+          });
+          const docRefreportlab = doc(database, "labs",docdata1.id);
+          updateDoc(docRefreportlab, {
+            reports: arrayRemove({pemail:pemail,pname:pname,timenow:timenow,typeofreport:typeofreport,url:urlrep})
+          });
+        });
+
+      })
+    });
+    parentEle.remove();
+  });
+  img2.style.cursor = "pointer";
 }
 
 onAuthStateChanged(auth, async (user) => {
@@ -270,14 +295,13 @@ function addReport2(name, email, typereport, time, urlreport) {
   div1.classList.add("reportElement");
   reportElements.prepend(div1);
   const div2 = document.createElement("div");
-  div2.style.flexGrow = "3";
+  div2.style.flexGrow = "1";
   const p1 = document.createElement("p");
   p1.classList.add("Pname");
   p1.innerText = "Patient name : " + name;
   const p2 = document.createElement("p");
   p2.classList.add("Pemail");
   p2.innerText = "Patient email : " + email;
-  p2.style.fontSize = "15px";
   const p3 = document.createElement("p");
   p3.classList.add("type");
   p3.innerText = "Type of test : " + typereport;
@@ -291,21 +315,52 @@ function addReport2(name, email, typereport, time, urlreport) {
   div2.appendChild(p4);
   const div3 = document.createElement("div");
   const img1 = document.createElement("img");
-  img1.src = "assets/pencil 1.png";
-  img1.style.width = "30px";
-  img1.style.height = "30px";
+  img1.src ="assets/eye.png";
   const img2 = document.createElement("img");
   img2.src = "assets/delete 2.png";
-  img2.style.width = "30px";
-  img2.style.height = "30px";
   div3.appendChild(img1);
   div3.appendChild(img2);
   div1.appendChild(div2);
   div1.appendChild(div3);
-  div1.addEventListener("click", async () => {
+  img1.addEventListener("click", async () => {
     window.open(urlreport, "_blank");
   });
-  div1.style.cursor = "pointer";
+  img1.style.cursor = "pointer";
+  img2.addEventListener("click",(e)=>{
+    const parentEle=e.target.parentElement.parentElement;
+    onAuthStateChanged(auth,(user) => {
+      const q1 = query(
+        collection(database, "labs"),
+        where("uid", "==",user.uid)
+      );
+      getDocs(q1).then((querySnapshot) => {
+        querySnapshot.forEach( (docdata1) => {
+          const q = query(
+            collection(database, "users"),
+            where("pid", "==",name+email)
+          );
+          getDocs(q).then((querySnapshot) => {
+            querySnapshot.forEach( (docdata) => {
+              const docRefreport = doc(database, "users",docdata.id);
+              console.log(docdata.id);
+              const nlab=docdata1.data().name;
+              updateDoc(docRefreport, {
+                [typereport]: arrayRemove({labname:nlab,timenow:time,urlrep:urlreport})
+              }).then(()=>{
+                console.log("updated");
+              })
+            });
+          });
+          const docRefreportlab = doc(database, "labs",docdata1.id);
+          updateDoc(docRefreportlab, {
+            reports: arrayRemove({pemail:email,pname:name,timenow:time,typeofreport:typereport,url:urlreport})
+          });
+        });
+
+      })
+    });
+    parentEle.remove();
+  });
 }
 
 function checkuser() {

@@ -63,21 +63,36 @@ function displayreport(lab, time, url) {
     const div3 = document.createElement("div");
     const img1 = document.createElement("img");
     img1.src = "assets/eye.png";
-    img1.style.width = "30px";
-    img1.style.height = "30px";
     img1.style.paddingRight = "10px";
     const img2 = document.createElement("img");
     img2.src = "assets/download-circular-button.png";
-    img2.style.width = "30px";
-    img2.style.height = "30px";
+    var downloadLink = document.createElement("a");
+    downloadLink.appendChild(img2);
+    img2.addEventListener('click',()=>{
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = 'blob';
+        xhr.onload = function(event) {
+            var blob = xhr.response;
+            var url = URL.createObjectURL(blob);
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = "report";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+
+        xhr.open('GET', url);
+        xhr.send();
+
+    })
     div3.style.alignItems = "center";
     div3.appendChild(img1);
-    div3.appendChild(img2);
+    div3.appendChild(downloadLink);
     div1.appendChild(div2);
     div1.appendChild(div3);
     img1.addEventListener("click", async () => {
         window.open(url, "_blank");
     });
-    // img2.addEventListener("click",()=>{});
-    div1.style.cursor = "pointer";
+    div1.style.cursor="pointer";
 }

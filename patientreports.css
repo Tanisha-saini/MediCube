@@ -10,21 +10,32 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+.rightimg {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 30%;
+    background-image: contain;
+    margin-top: 7%;
+}
+
 nav {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 4em;
     background-color: #E6851A;
-    height: 100vh;
-    width: 4vw;
+    height: 100%;
+    width: 50px;
     align-items: center;
     justify-content: center;
     position: fixed;
+    top:0px;
+    left:0px;
 }
 
 .nav-item img {
-    height: 2rem;
-    width: 2rem;
+    height: 30px;
+    width: 30px;
 }
 
 #section1 h1 {
@@ -37,7 +48,7 @@ nav {
 #section1 {
     /* position: relative; */
     /* top: 20px; */
-    margin-left: 15vw;
+    margin-left: 120px;
     top: 7vh;
     border-radius: 20px;
     display: flex;
@@ -65,14 +76,12 @@ nav {
 
 #section2 {
     position: relative;
-    left: 10rem;
+    left: 70px;
     top: 0px;
     padding: 40px 30px 30px 30px;
     width: 70%;
 
 }
-
-
 
 .report {
     display: flex;
@@ -82,7 +91,7 @@ nav {
     padding: 20px;
     margin: 20px;
     font-size: 20px;
-    width: 72%;
+    width: 70%;
 
 }
 
@@ -96,4 +105,79 @@ nav {
 .time{
     color: #ea9c45;
     font-size: 13px;
+}
+.report img{
+    width:30px;
+    height:30px;
+}
+
+@media screen and (max-width:900px) {
+    .rightimg{
+        display: none;
+    }
+    #section2{
+        width:80%;
+        margin: 0px;
+    }
+    .report{
+        margin-right:0px;
+        width:80%;
+    }
+}
+
+@media screen and (max-width:450px){
+    #typeofrep{
+        font-size: 30px;
+    }
+
+    #section1 h1{
+        gap:5px
+    }
+    #section1{
+        padding: 0px 4px;
+        align-items: center;
+        margin-left: 70px;
+    }
+    #section1 img{
+        height:30px;
+        width:30px;
+    }
+    .report .Lname{
+        font-size: 20px;
+    }
+    .report .time{
+        font-size: 12px;
+    }
+    .report img{
+        height: 20px;
+        width: 20px;
+    }
+    .report{
+        width:80%;
+    }
+    #section2{
+        left:30px;
+    }
+
+}
+
+@media screen and (max-width:350px){
+    #typeofrep{
+        font-size: 25px;
+    }
+    #section1 img{
+        height:20px;
+        width:30px;
+    }
+    #section1{
+        gap:20px;
+    }
+    .report .time{
+        font-size: 10px;
+    }
+    .report img{
+        height: 15px;
+        width: 15px;
+    }
+
 }

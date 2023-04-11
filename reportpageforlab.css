@@ -16,14 +16,16 @@ nav {
   flex-direction: column;
   gap: 4rem;
   background-color: #e6851a;
-  height: 100vh;
-  width: 4rem;
+  height: 100%;
+  width: 50px;
   align-items: center;
+  top: 0px;
+  left: 0px;
   justify-content: center;
 }
 .nav-item img {
-  height: 2rem;
-  width: 2rem;
+  height: 30px;
+  width: 30px;
 }
 
 /* .............................Lab Login page............................. */
@@ -46,13 +48,14 @@ nav {
 }
 
 #secondHalf #newreport {
+  position: relative;
   background-color: #555ba5;
-  margin: 20px;
-  padding: 10px 0px 10px 10px;
+  left: 20px;
+  padding: 10px 10px 10px 10px;
   color: white;
   display: flex;
   border-radius: 5px;
-  width: 30%;
+  width: 40%;
 }
 
 .reportElement {
@@ -72,6 +75,10 @@ nav {
 .Pname,
 .Pemail {
   color: #ea9c45;
+}
+
+.Pemail {
+  font-size: 15px;
 }
 
 .type {
@@ -149,4 +156,185 @@ nav {
   padding: 10px;
   font-size: 18px;
   border-radius: 10px;
+}
+
+#inputElement img {
+  height: 300px;
+  width: 300px;
+  margin-left: 20px;
+}
+
+#inputElement2 img {
+  height:300px;
+  width:300px;
+  margin-left:20px;
+}
+
+
+.reportElement img {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+  #inputElement img,#inputElement2 img
+  {
+    height: 200px;
+    width: 200px;
+  }
+
+  #inputElement input {
+    font-size: 10px;
+    width: 90%;
+  }
+  #inputElement2 select {
+    font-size: 15px;
+    width: 60%;
+  }
+
+  #inputElement2 input[type="file"] {
+    font-size: 12px;
+    border-radius: 10px;
+    width: 90%;
+  }
+  .inputbtn,
+  .upload {
+    width: 90%;
+  }
+  .numberingbtn {
+    font-size: 15px;
+  }
+  #inputElement p,
+  #inputElement2 p {
+    font-size: 15px;
+  }
+  #inputElement,
+  #inputElement2 {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .rightimg {
+    display: none;
+  }
+  .reportElement {
+    width: 95%;
+  }
+  #inputElement,#inputElement2 {
+    width: 92%;
+  }
+
+  #secondhalf {
+    left: 40px;
+    width: 80%;
+  }
+  #secondHalf #newreport {
+    width: 50%;
+  }
+  #inputElement2 p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 700px){
+  #inputElement2 img {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #inputElement img{
+    width: 100px;
+  }
+  #secondhalf {
+    left: 30px;
+    width: 75%;
+  }
+  .Pname,
+  .type {
+    font-size: 15px;
+  }
+  .Pemail {
+    font-size: 12px;
+  }
+  .reportElement img {
+    width: 25px;
+    height: 25px;
+  }
+  .reportElement {
+    width: 90%;
+  }
+  .numberingbtn {
+    font-size: 10px;
+  }
+  #inputElement p {
+    font-size: 10px;
+  }
+  #inputElement ,#inputElement2{
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #inputElement p,#inputElement2 p {
+    font-size: 8px;
+  }
+  #inputElement img,#inputElement2 img{
+    width: 80px;
+    margin: 0px;
+  }
+  .numberingbtn {
+    padding: 5px;
+    font-size: 8px;
+  }
+  #inputElement input,
+  #inputElement2 input[type="file"],#inputElement2 select,
+  .inputbtn,.upload {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+
+}
+@media screen and (max-width: 410px) {
+  #secondHalf #newreport {
+    width: 60%;
+    font-size: 15px;
+  }
+  #secondhalf {
+    left: 10px;
+    width: 75%;
+  }
+  .reportElement img {
+    width: 20px;
+    height: 20px;
+  }
+  .Pname,
+  .type {
+    font-size: 12px;
+  }
+  .reportElement {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 335px) {
+  .Pname,
+  .type,
+  .Pemail {
+    font-size: 10px;
+  }
+  .reportElement {
+    width: 85%;
+    padding: 10px;
+  }
+  .reportElement img {
+    width: 10px;
+    height: 10px;
+  }
+  #secondHalf #newreport {
+    width: 60%;
+    font-size: 10px;
+  }
+  
 }
