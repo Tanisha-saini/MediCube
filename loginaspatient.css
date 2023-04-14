@@ -5,6 +5,10 @@
     /* outline:1px solid black; */
 }
 
+a{
+    cursor: pointer;
+}
+
 body{
     font-family: "Poppins", sans-serif;
     --primary-clr:#E6851A;
@@ -31,14 +35,14 @@ nav{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height:100vh;
-    margin-left: 50px;
+    height:90vh;
+    margin-left: 30px;
     /* flex-wrap: wrap; */
-    padding:1rem;
+    padding:2rem 1rem;
 }
 #login-wrapper img{
     width:30%;
-    height:90vh;
+    height:80vh;
 }
 form{
     border:2px solid var(--sec-clr);
@@ -48,13 +52,13 @@ form{
     border-radius: 1rem;
     /* width: 25%; */
     align-items: center;
-    height:70vh;
+    height:67vh;
 }
 
 form h1{
     text-align: center;
     color: var(--sec-clr);
-    /* padding: 2rem 0; */
+    padding: 2rem 0;
     /* font-size: 2.5rem; */
 }
 
@@ -105,11 +109,25 @@ input[type=text], input[type=phoneno],input[type="email"],input[type="password"]
     text-decoration: underline;
 }
 @media screen and (max-width: 800px) {
+    nav {
+        width: 40px;
+        position: fixed;
+        overflow-y: hidden;
+    }
+
     #login-wrapper img{
         width:40%;
     }
     #firstimg{
         display:none;
+    }
+    form{
+        padding: 3rem 0.5rem;
+        width:35rem;
+    }
+
+    form h1{
+        padding: 1rem 0;
     }
     
 }

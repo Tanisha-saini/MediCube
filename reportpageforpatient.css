@@ -5,6 +5,10 @@
     /* outline:1px solid black; */
 }
 
+a{
+    cursor: pointer;
+}
+
 body{
     font-family: "Poppins", sans-serif;
     --primary-clr:#E6851A;

@@ -6,6 +6,10 @@
     /* outline:1px solid black; */
 }
 
+a{
+    cursor: pointer;
+}
+
 body{
     font-family: "Poppins", sans-serif;
     --primary-clr:#E6851A;
@@ -32,7 +36,7 @@ nav{
 #heading{
     text-align: center;
     margin-left: 50px;
-    padding-top:1rem;
+    padding:4rem 0;
     /* margin-bottom: 1rem; */
     color:#E6851A;
     font-size: 3rem
@@ -45,7 +49,7 @@ section{
     /* margin: auto; */
     /* height:100vh; */
     flex-wrap: wrap;
-    margin-left: 50px;
+    margin: 0 0 20px 50px;
 }
 /* section img{
     height:30%;
@@ -106,10 +110,21 @@ section{
     cursor: pointer;
 }
 
+@media screen  and (max-width:800px){
+        
+    nav {
+        width: 40px;
+        position: fixed;
+        overflow-y: hidden;
+    }
+
+}
+
 @media screen and (max-width: 420px)
 {
     #heading{
         font-size: 2rem;
+        padding: 2rem 0;
     }
     section{
         gap:1rem;

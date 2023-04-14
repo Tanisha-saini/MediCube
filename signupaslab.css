@@ -5,6 +5,10 @@
   /* outline:1px solid black; */
 }
 
+a{
+  cursor: pointer;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   --primary-clr: #e6851a;
@@ -16,7 +20,7 @@ nav {
   gap: 4rem;
   background-color: #e6851a;
   height: 100vh;
-  width: 4rem;
+  width: 50px;
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -31,7 +35,7 @@ nav {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin-left: 50px;
+  margin-left: 25px;
   /* padding:1rem; */
 }
 
@@ -52,6 +56,7 @@ form{
 form h1 {
   text-align: center;
   color: var(--sec-clr);
+  padding: 1rem 0;
 }
 
 form a {
@@ -68,7 +73,7 @@ form a {
 }
 
 label {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 input[type="text"],
@@ -79,7 +84,7 @@ input[type="password"] {
   border: 0.1rem solid var(--sec-clr);
   border-radius: 2rem;
   height: 1.5rem;
-  width: 75%;
+  width: 10rem;
   padding: 0.2rem 1rem;
 }
 
@@ -126,6 +131,12 @@ select {
   form{
       margin-left:1rem;
   }
+
+  nav {
+    width: 40px;
+    position: fixed;
+    overflow-y: hidden;
+}
 }
 @media screen and (max-width: 600px) {
   #signup-wrapper img{

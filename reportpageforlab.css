@@ -10,6 +10,11 @@ body {
   margin: 0;
   padding: 0;
 }
+
+a{
+  cursor: pointer;
+}
+
 nav {
   position: fixed;
   display: flex;
@@ -215,6 +220,13 @@ nav {
 }
 
 @media screen and (max-width: 900px) {
+
+  nav {
+    width: 40px;
+    position: fixed;
+    overflow-y: hidden;
+  }
+
   .rightimg {
     display: none;
   }

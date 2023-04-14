@@ -5,6 +5,10 @@
     /* outline:1px solid black; */
 }
 
+a{
+    cursor: pointer;
+}
+
 body{
     font-family: "Poppins", sans-serif;
     --primary-clr:#E6851A;
@@ -16,7 +20,7 @@ nav{
     gap:4rem;
     background-color: #E6851A;
     height:100vh;
-    width:40px;
+    width:50px;
     align-items: center;
     justify-content: center;
     position: fixed;
@@ -33,7 +37,7 @@ nav{
     align-items: center;
     /* height:auto; */
     margin-left: 10px;
-    padding:1rem;
+    padding:6rem 1rem;
 }
 #signup-wrapper img{
     width:30%;
@@ -52,6 +56,7 @@ form{
 form h1{
     text-align: center;
     color: var(--sec-clr);
+    padding-bottom: 1rem;
 }
    
 form a{
@@ -75,7 +80,7 @@ input[type=text], input[type=phoneno],input[type="email"],input[type="password"]
     border: 0.1rem solid var(--sec-clr);
     border-radius: 2rem;
     height:1.7rem;
-    width:90%;
+    width:10rem;
     padding: 0.2rem 1rem;
 }
 
@@ -86,7 +91,7 @@ input[type=text], input[type=phoneno],input[type="email"],input[type="password"]
     padding: 1rem 2rem;
     width:60%;
     margin: auto;
-    margin-top:0.8rem;
+    margin-top:1.2rem;
     margin-bottom: 0.8rem;
     border: none;
     display: flex;
@@ -112,6 +117,17 @@ select{
     font-size: 1rem;
 }
 @media screen and (max-width: 900px) {
+
+    nav {
+        width: 40px;
+        position: fixed;
+        overflow-y: hidden;
+    }
+
+    #signup-wrapper{
+        margin-left: 20px;
+        padding: 4rem 1rem;
+    }
     #signup-wrapper img{
         width:45%;
     }
